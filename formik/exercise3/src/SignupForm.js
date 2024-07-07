@@ -101,17 +101,18 @@ const SignupForm = () => {
 
   const SignUpSchema = Yup.object().shape({
     username: Yup.string()
-      .min(2, 'Too Short!')
-      .max(70, 'Too Long!')
-      .required('Required'),
-    email: Yup.string().email('Invalid email').required('Required'),
+      .min(2, t('tooShort'))
+      .max(70, t('tooLong'))
+      .required(t('required')),
+    email: Yup.string().email(t('invalidEmail')).required(t('required')),
+    password: Yup.string().min(8, t('minPassword')).required(t('required')),
   })
 
   const formik = useFormik({
     initialValues: { username: '', email: '' },
     validationSchema: SignUpSchema,
     onSubmit: (values) => {
-      console.log(values)
+      alert(values)
     },
   })
 
@@ -120,7 +121,7 @@ const SignupForm = () => {
       <button onClick={() => changeLanguage('es')}>Español</button>
       <button onClick={() => changeLanguage('en')}>English</button>
 
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit} noValidate>
         <label>{t('username')}</label>
         <input
           type="text"
@@ -141,6 +142,17 @@ const SignupForm = () => {
         />
         {formik.touched.email && formik.errors.email ? (
           <div>{formik.errors.email}</div>
+        ) : null}
+
+        <label>{t('password')}</label>
+        <input
+          type="password"
+          name="password"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+        />
+        {formik.touched.password && formik.errors.password ? (
+          <div>{formik.errors.password}</div>
         ) : null}
         <button type="text">{t('signUp')} </button>
       </form>
