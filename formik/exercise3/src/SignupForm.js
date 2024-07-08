@@ -109,10 +109,14 @@ const SignupForm = () => {
   })
 
   const formik = useFormik({
-    initialValues: { username: '', email: '' },
+    initialValues: { username: '', email: '', password: '' },
     validationSchema: SignUpSchema,
     onSubmit: (values) => {
-      alert(values)
+      alert(
+        `${'Username'}: ${values.username}
+         ${'Email'}:${values.email}
+        ${'Password'}:${values.password}`
+      )
     },
   })
 
