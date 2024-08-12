@@ -1,0 +1,4 @@
+{
+  "greeting": "¡Hola, bienvenido a nuestro sitio web!",
+  "description": "Este es un ejemplo simple de localización de idiomas usando React Context."
+}
