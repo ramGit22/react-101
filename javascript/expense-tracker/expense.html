@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .expense-list {
+        list-style: none;
+        padding: 0;
+      }
+      .expense-item {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+      }
+      .total-expenses {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      .expense-controls {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Expense Tracker</h1>
+
+    <div class="expense-controls">
+      <input type="text" id="description" placeholder="Description" />
+      <input type="number" id="amount" placeholder="Amount" />
+      <input type="date" id="date" />
+      <button id="addExpenseBtn">Add Expense</button>
+    </div>
+
+    <h2>Expense List</h2>
+    <ul id="expenseList" class="expense-list"></ul>
+
+    <div class="total-expenses">Total: $<span id="totalAmount">0.00</span></div>
+
+    <div>
+      <label for="monthFilter">Filter by Month:</label>
+      <input type="month" id="monthFilter" />
+    </div>
+
+    <script src="expense.js"></script>
+  </body>
+</html>
