@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const storageExpenses = localStorage.getItem('expenseStore')
+  const parsedExpenses = JSON.parse(storageExpenses)
   const descriptionInput = document.getElementById('description')
   const amountInput = document.getElementById('amount')
   const dateInput = document.getElementById('date')
@@ -7,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalAmountDisplay = document.getElementById('totalAmount')
   const monthFilter = document.getElementById('monthFilter')
 
-  let expenses = []
+  let expenses = parsedExpenses || []
   let totalAmount = 0
 
   // Function to format date to YYYY-MM for filtering
@@ -42,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       deleteBtn.textContent = 'Delete'
       deleteBtn.onclick = () => {
         expenses.splice(index, 1) // Remove the expense from the array
+        localStorage.setItem('expenseStore', JSON.stringify(expenses))
         updateTotalAmount()
         renderExpenses()
       }
@@ -59,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (description && !isNaN(amount) && date) {
       const newExpense = { description, amount, date }
+
       expenses.push(newExpense)
+      localStorage.setItem('expenseStore', JSON.stringify(expenses))
 
       // Clear input fields
       descriptionInput.value = ''
@@ -86,4 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
       renderExpenses() // No filter, show all expenses
     }
   })
+  updateTotalAmount()
+  renderExpenses()
 })
