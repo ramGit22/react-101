@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Time Search Filter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .item-list {
+        list-style: none;
+        padding: 0;
+      }
+      .item {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Real-Time Search Filter</h1>
+
+    <div>
+      <input type="text" id="searchInput" placeholder="Search items..." />
+    </div>
+
+    <h2>Item List</h2>
+    <ul id="itemList" class="item-list">
+      <li class="item">Apple</li>
+      <li class="item">Banana</li>
+      <li class="item">Orange</li>
+      <li class="item">Pineapple</li>
+      <li class="item">Mango</li>
+    </ul>
+
+    <script src="search-filter.js"></script>
+  </body>
+</html>
