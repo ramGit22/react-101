@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Form Fields</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .field-list {
+        list-style: none;
+        padding: 0;
+      }
+      .field-item {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      .field-item input {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dynamic Form Field Generator</h1>
+
+    <div>
+      <button id="addFieldBtn">Add Field</button>
+    </div>
+
+    <ul id="fieldList" class="field-list"></ul>
+
+    <button id="submitBtn">Submit</button>
+
+    <script src="dynamic-form.js"></script>
+  </body>
+</html>
