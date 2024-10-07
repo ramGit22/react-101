@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polling App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .poll-options {
+        list-style: none;
+        padding: 0;
+      }
+      .poll-option {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Polling App</h1>
+
+    <div>
+      <h2>Vote for your favorite option:</h2>
+      <ul id="pollOptions" class="poll-options">
+        <li class="poll-option">
+          <span>Option A</span>
+          <button class="voteBtn">Vote</button>
+        </li>
+        <li class="poll-option">
+          <span>Option B</span>
+          <button class="voteBtn">Vote</button>
+        </li>
+        <li class="poll-option">
+          <span>Option C</span>
+          <button class="voteBtn">Vote</button>
+        </li>
+      </ul>
+    </div>
+
+    <h2>Results:</h2>
+    <ul id="pollResults" class="poll-options"></ul>
+
+    <script src="polling-app.js"></script>
+  </body>
+</html>
